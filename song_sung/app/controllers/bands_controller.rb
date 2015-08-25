@@ -23,4 +23,15 @@ class BandsController < ApplicationController
     end
   end
 
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_band
+      @band = Band.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def band_params
+      params.require(:band).permit(:name, :genre, :explicit_lyrics)
+    end
+
 end
