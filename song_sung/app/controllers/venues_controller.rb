@@ -14,4 +14,18 @@ class VenuesController < ApplicationController
     @venue = Venue.new
   end
 
+  def create
+    @venue = Venue.new(venue_params)
+
+    respond_to do |format|
+      if @venue.save
+        format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
+        format.json { render :show, status: :created, location: @venue }
+      else
+        format.html { render :new }
+        format.json { render json: @venue.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 end
