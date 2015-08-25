@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+   <h1>Create a new Band</h1>
+
+   <%= form_for @band do |t| %>
+   <%= t.text_field :name, placeholder: "Name" %>
+   <%= t.text_field :genre, placeholder: "Genre" %>
+   <%= t.text_field :explicit_lyrics, placeholder: "Explicit Lyrics?" %>
+    <%= t.submit %>
+    <% end %>
+
+</body>
+</html>
