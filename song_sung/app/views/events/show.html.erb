@@ -1,0 +1,11 @@
+All Events at this venue
+
+<ul>
+<% @events.each do |events| %>
+  <li>
+    <%=events.date %>
+  </li>
+<% end %>
+</ul>
+<%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>
