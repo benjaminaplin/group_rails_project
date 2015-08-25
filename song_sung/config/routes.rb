@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
     resources :bands
   end
+
+  get '/search/:date' => 'search#search', :as => 'search'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
