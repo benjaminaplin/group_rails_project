@@ -6,6 +6,7 @@ All Events at this venue
 <% @events.each do |events| %>
 	<li>
 		<%=events.date %>
+		<%=events.band.name %>
 	</li>
 <% end %>
 </ul>
