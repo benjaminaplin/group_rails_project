@@ -14,6 +14,10 @@ class VenuesController < ApplicationController
     @venue = Venue.new
   end
 
+  def destroy
+    @venue = Venue.destroy(params[:id])
+  end
+
   def create
     @venue = Venue.new(venue_params)
 
