@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
 
   def index
+    @venue = Venue.find(params[:venue_id])
+    @events = @venue.events
   end
 
   def new
@@ -13,6 +15,10 @@ class EventsController < ApplicationController
     @venue = Venue.find(params[:venue_id])
     @event = Event.create(event_params)
     redirect_to venue_path(@venue)
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
 end
