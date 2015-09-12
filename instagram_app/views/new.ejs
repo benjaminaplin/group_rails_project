@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+      <title>World's Amaze pic-Growing App</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+<body>
+  
+  <div class="container">
+    <h1 style='font-weight:bold; color:salmon;'> picturz info </h1>
+    <ul>
+
+
+    <% myParsedData.data.forEach(function(e) {%>
+      <li>
+        <img src="<%=e.images.low_resolution.url%>">
+        <div class="buttons">
+          <form method="GET" action="/">
+            <input type="submit" value="cancel">
+          </form>
+          <form method="POST" action="/pics">
+            <input type="submit" value="add me">
+            <input type="hidden" value="<%=e.images.low_resolution.url%>" name="picurl">
+          </form>
+        </div><!--buttons-->
+      </li>
+    <% });%>
+    </ul>
+  </div><!--container-->
+
+</body>
+</html>

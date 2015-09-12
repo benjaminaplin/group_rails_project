@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>worlds aweoms pic app></title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="/style.css">
+  </head>
+<body>
+  <div class="container">
+
+      <h1> Welcome to the pic app! </h1>
+      <div class="lookup">
+        <h1>looks up picz</h1>
+        <form method="GET" action="/pics">
+          <input name="pics" type="text" placeholder="title">
+          <input type="submit" value="GIT ME pictahs">
+        </form>
+      </div><!--lookup-->
+      <h2> Here are piccs !!</h2>
+      <div class="piccontainer">
+        <ul> 
+          <% myParsedData.pic.forEach(function(e) {%>
+          <li>
+            <img src="<%=e.picurl%>">
+            <div class="buttons">
+              <form method="POST" action="/pics/<%=e.id%>?_method=DELETE">
+                <input type="submit" value="Delete me">
+              </form>
+<!--        <form method="GET" action="/pics/<%=e.id%>/edit">
+                <input type="submit" value="Edit me">
+              </form> -->
+            </div><!--buttons-->
+          </li>
+          <%  }); %>
+        </ul>
+      </div><!--moviecontainer-->
+
+  </div><!--container-->
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+.text{
+  width: 75%;
+  float: left;
+}
+
+.buttons {
+
+  width: auto;
+  height: auto;
+}
+
+.buttons form {
+  display: inline-block;
+
+}
+
+img {
+  height: 225px;
+  width: auto;
+}
+
+h1 {
+  font-weight: bold; 
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h2 span {
+  font-weight: bold; 
+
+}
+
+li{
+  list-style: none;
+}
+
+.piccontainer ul li {
+  list-style: none;
+  margin: 5px;
+  padding: 5px;
+
+}
