@@ -1,0 +1,14 @@
+<%= @venue.name %>
+
+All Events at this venue
+
+<ul>
+<% @events.each do |events| %>
+	<li>
+		<%=events.date %>
+		<%=events.band.name %>
+	</li>
+<% end %>
+</ul>
+<%= link_to 'create event' new_venue_event_path(@events) %>
+<%= link_to 'Back', venues_path %>
